@@ -148,7 +148,7 @@
             if (confirm("Apakah Anda yakin ingin menghapus item ini?")) {
                 $.ajax({
                     type: "POST",
-                    url: "/bucket/delete", // Sesuaikan dengan URL endpoint yang sesuai
+                    url: "/delete", // Sesuaikan dengan URL endpoint yang sesuai
                     data: { num_gives: num },
                     success: function (response) {
                         alert(response["msg"]);
@@ -168,6 +168,7 @@
         <div class="mybucket">
             <input id="bucket" class="form-control" type="text" placeholder="Enter your bucket list item here">
             <button onclick="save_bucket()" type="button" class="btn btn-outline-primary">Save</button>
+            <button onclick="delete_bucket()" type="button" class="btn btn-outline-danger">Delete</button>
         </div>
     </div>
     <div class="mybox" id="bucket-list">
